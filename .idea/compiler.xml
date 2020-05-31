@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ProjectIntegrationCommon" />
+        <module name="ProjectIntegrationdao" />
+        <module name="ProjectIntegrationManagement" />
+        <module name="ProjectIntegrationVO" />
+        <module name="ProjectIntegrationWEB" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ProjectIntegrationAdminService" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ProjectIntegrationAdminService" options="-parameters" />
+      <module name="ProjectIntegrationCommon" options="-parameters" />
+      <module name="ProjectIntegrationManagement" options="-parameters" />
+      <module name="ProjectIntegrationVO" options="-parameters" />
+      <module name="ProjectIntegrationWEB" options="-parameters" />
+      <module name="ProjectIntegrationdao" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-AdminService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-Common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-Management" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-VO" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-WEB" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProjectIntegration-dao" charset="UTF-8" />
+  </component>
+</project>

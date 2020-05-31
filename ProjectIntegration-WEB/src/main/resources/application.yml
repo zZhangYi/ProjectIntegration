@@ -1,0 +1,10 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /
+    tomcat:
+      accesslog:
+        enabled: true
+        pattern: '%h %l %u %t "%r" %s %D %b "%{Referer}i" "%{User-Agent}i" "%{traceId}r" "%{rt_code}r"'
+        directory: ${BASE_LOG_HOME:/data/tomcat}/logs
+
