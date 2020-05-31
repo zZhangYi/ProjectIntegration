@@ -5,28 +5,45 @@
 
 <generatorConfiguration>
     <!--导入属性配置-->
-    <properties resource="datasource.properties"></properties>
+    <!--  <properties resource="generator.properties"></properties>-->
 
     <!-- 指定数据库驱动的jdbc驱动jar包的位置 -->
-    <classPathEntry location="${db.driverLocation}" />
-
+    <classPathEntry location="C:\Users\jurzis\mysql\mysql-connector-java-5.1.34.jar"/>
     <!-- context 是逆向工程的主要配置信息 -->
     <!-- id：起个名字 -->
     <!-- targetRuntime：设置生成的文件适用于那个 mybatis 版本 -->
-    <context id="default" targetRuntime="MyBatis3">
-
+    <context id="DBcreate" targetRuntime="MyBatis3">
+        <property name="mergeable" value="false" />
+        <!--        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>-->
+        <!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>-->
+        <!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>-->
         <!--optional,旨在创建class时，对注释进行控制-->
+        <property name="javaFileEncoding" value="UTF-8" />
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"></plugin>
+        <!-- 此处是将Example改名为Criteria 当然 想改成什么都行~    -->
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+
+        <!-- 覆盖重复生成的mapper    -->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"></plugin>
+        <!-- 序列化    -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+
         <commentGenerator>
-            <property name="suppressDate" value="true" />
+            <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="true" />
+            <!--<property name="suppressAllComments" value="true" />-->
+            <!--po类属性加comment注释-->
+            <property name="addRemarkComments" value="true"/>
         </commentGenerator>
 
         <!--jdbc的数据库连接-->
-        <jdbcConnection driverClass="${db.driverClassName}"
-                        connectionURL="${db.url}"
-                        userId="${db.username}"
-                        password="${db.password}">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test"
+                        userId="root"
+                        password="123456">
         </jdbcConnection>
 
         <!--非必须，类型处理器，在数据库类型和java类型之间的转换控制-->
@@ -34,40 +51,43 @@
             <!-- 默认情况下数据库中的 decimal，bigInt 在 Java 对应是 sql 下的 BigDecimal 类 -->
             <!-- 不是 double 和 long 类型 -->
             <!-- 使用常用的基本类型代替 sql 包下的引用类型 -->
-            <property name="forceBigDecimals" value="false" />
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
+
 
         <!-- targetPackage：生成的实体类所在的包 -->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
         <javaModelGenerator targetPackage="com.zhy.po"
-                            targetProject=".\src\main\java">
+                            targetProject="src/main/java">
             <!-- 是否允许子包 -->
-            <property name="enableSubPackages" value="false" />
+            <property name="enableSubPackages" value="false"/>
             <!-- 是否对modal添加构造函数 -->
-            <property name="constructorBased" value="true" />
+            <property name="constructorBased" value="false"/>
             <!-- 是否清理从数据库中查询出的字符串左右两边的空白字符 -->
-            <property name="trimStrings" value="true" />
+            <property name="trimStrings" value="true"/>
             <!-- 建立modal对象是否不可改变 即生成的modal对象不会有setter方法，只有构造方法 -->
-            <property name="immutable" value="false" />
+            <property name="immutable" value="false"/>
         </javaModelGenerator>
 
-        <!-- targetPackage 和 targetProject：生成的 mapper 文件的包和位置 -->
+
+        <!-- targetPackage 和 targetProject：生成的 mybaitsplus 文件的包和位置 -->
         <sqlMapGenerator targetPackage="com.zhy.mapper"
-                         targetProject=".\src\main\java">
+                         targetProject="src/main/java">
             <!-- 针对数据库的一个配置，是否把 schema 作为字包名 -->
-            <property name="enableSubPackages" value="false" />
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
+
 
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.zhy.dao" targetProject=".\src\main\java">
+                             targetPackage="com.zhy.dao" targetProject="src/main/java">
             <!-- 针对 oracle 数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
-        <table tableName="tb_user" domainObjectName="User"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+
+
+        <table tableName="test" domainObjectName="TestPO" mapperName="TestDao" >
         </table>
+
     </context>
 </generatorConfiguration>
