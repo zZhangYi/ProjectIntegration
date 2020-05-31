@@ -1,0 +1,20 @@
+server:
+  port: 8004
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己,默认为true
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: true
+    #服务注册中心的地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    #Eureka服务注册中心名称
+    name: eurkea_server

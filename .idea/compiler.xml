@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ProjectIntegrationCommon" />
         <module name="ProjectIntegrationdao" />
+        <module name="ProjectIntegrationEureka" />
         <module name="ProjectIntegrationManagement" />
         <module name="ProjectIntegrationVO" />
         <module name="ProjectIntegrationWEB" />
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ProjectIntegrationAdminService" options="-parameters" />
       <module name="ProjectIntegrationCommon" options="-parameters" />
+      <module name="ProjectIntegrationEureka" options="-parameters" />
       <module name="ProjectIntegrationManagement" options="-parameters" />
       <module name="ProjectIntegrationVO" options="-parameters" />
       <module name="ProjectIntegrationWEB" options="-parameters" />

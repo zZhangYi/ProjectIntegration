@@ -13,6 +13,7 @@
         <module>ProjectIntegration-dao</module>
         <module>ProjectIntegration-VO</module>
         <module>ProjectIntegration-Management</module>
+        <module>ProjectIntegration-Eureka</module>
     </modules>
     <packaging>pom</packaging>
 

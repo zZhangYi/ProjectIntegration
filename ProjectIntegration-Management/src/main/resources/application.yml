@@ -9,6 +9,8 @@ server:
         directory: ${BASE_LOG_HOME:/data/tomcat}/logs
 
 spring:
+  application:
+    name: ProjectIntegration-Management
   datasource:
     data-username: root
     data-password: 123456

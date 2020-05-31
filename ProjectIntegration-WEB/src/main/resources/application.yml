@@ -9,6 +9,8 @@ server:
         directory: ${BASE_LOG_HOME:/data/tomcat}/logs
 
 spring:
+  application:
+    name: ProjectIntegration-WEB
   datasource:
     data-username: root
     data-password: 123456
@@ -20,3 +22,9 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   type-aliases-package: com.zhy.po
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8004/eureka/
+
