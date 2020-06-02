@@ -2,26 +2,26 @@ package com.zhy.vo;
 
 public class RestfulResultVO {
 
-    private String result = "Success";
-    private String message;
+    private String rt_message = "Success";
+    private String rt_code;
     private Object data;        // 返回数据
     private int cntPage;        // page数
     private long cntData;        // 返回数据总数
 
-    public String getResult() {
-        return result;
+    public static RestfulResultVO success(String rt_code, Object data){
+        RestfulResultVO restfulResultVO = new RestfulResultVO();
+        restfulResultVO.setRt_message("Success");
+        restfulResultVO.setRt_code(rt_code);
+        restfulResultVO.setData(data);
+        return restfulResultVO;
     }
 
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public static RestfulResultVO fail(String rt_code, String rt_message, Object data){
+        RestfulResultVO restfulResultVO = new RestfulResultVO();
+        restfulResultVO.setRt_message(rt_message);
+        restfulResultVO.setRt_code(rt_code);
+        restfulResultVO.setData(data);
+        return restfulResultVO;
     }
 
     public Object getData() {
@@ -48,11 +48,27 @@ public class RestfulResultVO {
         this.cntData = cntData;
     }
 
+    public String getRt_message() {
+        return rt_message;
+    }
+
+    public void setRt_message(String rt_message) {
+        this.rt_message = rt_message;
+    }
+
+    public String getRt_code() {
+        return rt_code;
+    }
+
+    public void setRt_code(String rt_code) {
+        this.rt_code = rt_code;
+    }
+
     @Override
     public String toString() {
         return "RestfulResultVO{" +
-                "result='" + result + '\'' +
-                ", message='" + message + '\'' +
+                ", rt_message='" + rt_message + '\'' +
+                ", rt_code='" + rt_code + '\'' +
                 ", data=" + data +
                 ", cntPage=" + cntPage +
                 ", cntData=" + cntData +
