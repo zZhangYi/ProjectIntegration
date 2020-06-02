@@ -16,6 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ProjectIntegrationAdminService" target="1.8" />
+      <module name="ProjectIntegrationZipkinServer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +27,7 @@
       <module name="ProjectIntegrationManagement" options="-parameters" />
       <module name="ProjectIntegrationVO" options="-parameters" />
       <module name="ProjectIntegrationWEB" options="-parameters" />
+      <module name="ProjectIntegrationZipkinServer" options="-parameters" />
       <module name="ProjectIntegrationdao" options="-parameters" />
     </option>
   </component>

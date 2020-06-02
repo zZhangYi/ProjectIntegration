@@ -16,6 +16,17 @@ spring:
     data-password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&serverTimezone=UTC
+  cloud:
+    config:
+      enabled: false
+  #zipkin链路配置
+  zipkin:
+    base-url: http://localhost:9411/zipkin/
+  #全部采集
+  sleuth:
+    #启用sleuth
+    enabled: true
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
