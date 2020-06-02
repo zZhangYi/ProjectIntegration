@@ -28,3 +28,24 @@ eureka:
     service-url:
       defaultZone: http://localhost:8004/eureka/
 
+#开启feign支持hystrix
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: 'text/xml,application/xml,application/json'
+      min-request-size: 2048
+    response:
+      enabled: true
+#设置hystrix的超时时间 默认是1000毫秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+
+

@@ -2,7 +2,9 @@ package com.zhy.sao.impl;
 
 import com.zhy.sao.ManagementSAO;
 import com.zhy.vo.RestfulResultVO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ManagementSAOImpl implements ManagementSAO {
 
     @Override

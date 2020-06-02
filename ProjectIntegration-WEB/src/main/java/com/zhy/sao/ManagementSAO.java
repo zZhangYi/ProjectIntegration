@@ -1,6 +1,5 @@
 package com.zhy.sao;
 
-
 import com.zhy.sao.impl.ManagementSAOImpl;
 import com.zhy.vo.RestfulResultVO;
 import org.springframework.cloud.openfeign.FeignClient;
