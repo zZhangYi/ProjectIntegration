@@ -11,6 +11,8 @@ server:
 spring:
   application:
     name: ProjectIntegration-WEB
+  profiles:
+    active: dev
   datasource:
     data-username: root
     data-password: 123456

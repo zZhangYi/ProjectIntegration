@@ -22,11 +22,6 @@
     <dependencies>
         <dependency>
             <groupId>com.zhy</groupId>
-            <artifactId>ProjectIntegration-Management</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhy</groupId>
             <artifactId>ProjectIntegration-Common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
