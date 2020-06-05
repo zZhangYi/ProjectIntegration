@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 /**
  * 异常处理切面 非空校验
- * 在需要校验的地方controller上加上@ParamValidate，入参加上@Valid
+ * 在需要校验的地方controller上加上@ParamValidate，入参加上@Valid，对象具体参数上加上 @NotNull(message = "")
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
